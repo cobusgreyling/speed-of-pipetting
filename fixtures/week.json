@@ -1,0 +1,92 @@
+{
+  "week": "2026-W44",
+  "lab": {
+    "robot_minutes": 1000,
+    "tech_minutes": 400
+  },
+  "recoverable": ["volume-short", "plate-looks-wrong", "seal-miss"],
+  "proposals": [
+    {
+      "id": "screen-a",
+      "title": "Viability readout, plate A",
+      "reagent_usd": 400,
+      "package_usd": 2000,
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 80, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 30, "outcome": "pass"},
+        {"name": "read", "kind": "handler", "minutes": 40, "outcome": "pass"}
+      ]
+    },
+    {
+      "id": "screen-b",
+      "title": "Viability readout, plate B",
+      "reagent_usd": 900,
+      "package_usd": 3500,
+      "rerun": "pass",
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 80, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 30, "outcome": "fail", "failure": "plate-looks-wrong"},
+        {"name": "read", "kind": "handler", "minutes": 60, "outcome": "pass"}
+      ]
+    },
+    {
+      "id": "screen-c",
+      "title": "Reporter readout, plate C",
+      "reagent_usd": 1100,
+      "package_usd": 4000,
+      "rerun": "pass",
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 90, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 35, "outcome": "pass"},
+        {"name": "read", "kind": "handler", "minutes": 60, "outcome": "fail", "failure": "wrong-reagent-lot"}
+      ]
+    },
+    {
+      "id": "screen-d",
+      "title": "Viability readout, plate D",
+      "reagent_usd": 500,
+      "package_usd": 2200,
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 90, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 40, "outcome": "pass"},
+        {"name": "read", "kind": "handler", "minutes": 50, "outcome": "pass"}
+      ]
+    },
+    {
+      "id": "screen-e",
+      "title": "Reporter readout, plate E",
+      "reagent_usd": 800,
+      "package_usd": 3000,
+      "rerun": "pass",
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 70, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 25, "outcome": "pass"},
+        {"name": "seal", "kind": "handler", "minutes": 30, "outcome": "fail", "failure": "seal-miss"},
+        {"name": "read", "kind": "handler", "minutes": 40, "outcome": "pass"}
+      ]
+    },
+    {
+      "id": "screen-f",
+      "title": "Viability readout, plate F",
+      "reagent_usd": 700,
+      "package_usd": 2800,
+      "rerun": "pass",
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 100, "outcome": "fail", "failure": "volume-short"},
+        {"name": "uncap", "kind": "judgment", "minutes": 20, "outcome": "pass"},
+        {"name": "read", "kind": "handler", "minutes": 40, "outcome": "pass"}
+      ]
+    },
+    {
+      "id": "screen-g",
+      "title": "Viability readout, plate G",
+      "reagent_usd": 350,
+      "package_usd": 1800,
+      "steps": [
+        {"name": "dispense", "kind": "handler", "minutes": 60, "outcome": "pass"},
+        {"name": "uncap", "kind": "judgment", "minutes": 20, "outcome": "pass"},
+        {"name": "read", "kind": "handler", "minutes": 30, "outcome": "pass"}
+      ]
+    }
+  ]
+}
